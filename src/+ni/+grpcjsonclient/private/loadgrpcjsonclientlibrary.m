@@ -1,5 +1,5 @@
-function LoadLibrary()
-library = LibraryName();
+function loadgrpcjsonclientlibrary()
+library = libraryname();
 if ~libisloaded(library)
     loadlibrary(library);
 end

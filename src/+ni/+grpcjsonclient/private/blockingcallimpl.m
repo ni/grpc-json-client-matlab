@@ -1,10 +1,10 @@
-function response = BlockingCallImpl(session, service, method, request, timeout)
-library = LibraryName();
+function response = blockingcallimpl(session, service, method, request, timeout)
+library = libraryname();
 func = 'GrpcJsonClient_BlockingCall';
-lock = Lock(session);
+unlocker = lock(session);
 [errorCode, ~, ~, ~, ~, tag, ~, size] = calllib(library, func, session, service, method, request, [], timeout, [], 0);
-CheckError(session, errorCode);
+checkerror(session, errorCode);
 response = blanks(size);
 [errorCode, ~, ~, ~, ~, ~, response] = calllib(library, func, session, [], [], [], tag, timeout, response, size);
-CheckError(session, errorCode);
-end  % function BlockingCallImpl
+checkerror(session, errorCode);
+end  % function blockingcallimpl

@@ -1,10 +1,10 @@
-function [code, message] = GetErrorImpl(session)
-library = LibraryName();
+function [code, message] = geterrorimpl(session)
+library = libraryname();
 func = 'GrpcJsonClient_GetError';
-lock = Lock(session);
+unlocker = lock(session);
 [errorCode, ~, ~, ~, size] = calllib(library, func, session, 0, [], 0);
-CheckError(session, errorCode);
+checkerror(session, errorCode);
 message = blanks(size);
 [errorCode, ~, code, message] = calllib(library, func, session, 0, message, size);
-CheckError(session, errorCode);
-end  % function GetErrorImpl
+checkerror(session, errorCode);
+end  % function geterrorimpl
