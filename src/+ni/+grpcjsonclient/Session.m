@@ -14,12 +14,16 @@ classdef Session < handle
             obj.session = initializeimpl(target);
         end
 
-        function queryreflectionservice(obj)
-            queryreflectionserviceimpl(obj.session);
+        function resetdescriptordatabase(obj)
+            resetdescriptordatabaseimpl(obj.session);
         end
 
-        function tag = startasynccall(obj, service, method, request)
-            tag = startasynccallimpl(obj.session, service, method, request);
+        function filldescriptordatabase(obj, timeout)
+            filldescriptordatabaseimpl(obj.session, timeout);
+        end
+
+        function tag = startasynccall(obj, service, method, request, timeout)
+            tag = startasynccallimpl(obj.session, service, method, request, timeout);
         end
 
         function response = finishasynccall(obj, tag, timeout)
