@@ -1,5 +1,5 @@
 function response = finishasynccallimpl(session, tag, timeout)
-library = LibraryName();
+library = libraryname();
 func = 'GrpcJsonClient_FinishAsyncCall';
 unlocker = lock(session);
 [errorCode, ~, ~, ~, size] = calllib(library, func, session, tag, timeout, [], 0);

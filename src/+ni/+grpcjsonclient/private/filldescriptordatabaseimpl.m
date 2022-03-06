@@ -1,4 +1,4 @@
-function filldescriptordatabaseimpl(timeout)
+function filldescriptordatabaseimpl(session, timeout)
 library = libraryname();
 func = 'GrpcJsonClient_FillDescriptorDatabase';
 unlocker = lock(session);
