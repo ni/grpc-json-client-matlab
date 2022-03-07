@@ -4,10 +4,10 @@
     <param.authnamewatermark>ni</param.authnamewatermark>
     <param.email>opensource@ni.com</param.email>
     <param.company>ni</param.company>
-    <param.summary />
-    <param.description />
+    <param.summary>Send and receive gRPC protobuf messages with JSON.</param.summary>
+    <param.description>https://github.com/ni/grpc-json-client-matlab</param.description>
     <param.screenshot />
-    <param.version>1.0</param.version>
+    <param.version>1.0.0</param.version>
     <param.output>${PROJECT_ROOT}\gRPC JSON Client.mltbx</param.output>
     <param.products.name />
     <param.products.id />
@@ -35,17 +35,24 @@
     <param.compatiblity.macos>false</param.compatiblity.macos>
     <param.compatiblity.linux>false</param.compatiblity.linux>
     <param.compatiblity.matlabonline>false</param.compatiblity.matlabonline>
-    <param.installation.map />
-    <param.additional.sw.names />
-    <param.additional.sw.licenses />
-    <param.additional.sw.win.url />
-    <param.additional.sw.mac.url />
-    <param.additional.sw.linux.url />
+    <param.installation.map>+nigrpcjsonclient\getInstallationLocation.mlx</param.installation.map>
+    <param.additional.sw.names>
+      <item>gRPC JSON Client Core Library</item>
+    </param.additional.sw.names>
+    <param.additional.sw.licenses>
+      <item>https://github.com/ni/grpc-json-client/blob/main/LICENSE</item>
+    </param.additional.sw.licenses>
+    <param.additional.sw.win.url>
+      <item>https://github.com/ni/grpc-json-client/releases/download/v1.0.0-beta.2/ni-grpc-json-client-windows-x64.zip</item>
+    </param.additional.sw.win.url>
+    <param.additional.sw.mac.url>
+      <item />
+    </param.additional.sw.mac.url>
+    <param.additional.sw.linux.url>
+      <item />
+    </param.additional.sw.linux.url>
     <unset>
-      <param.summary />
-      <param.description />
       <param.screenshot />
-      <param.version />
       <param.output />
       <param.products.name />
       <param.products.id />
@@ -69,21 +76,12 @@
       <param.release.end />
       <param.release.current.only />
       <param.compatiblity.windows />
-      <param.additional.sw.names />
-      <param.additional.sw.licenses />
-      <param.additional.sw.win.url />
-      <param.additional.sw.mac.url />
-      <param.additional.sw.linux.url />
     </unset>
     <fileset.rootdir>
       <file>${PROJECT_ROOT}</file>
     </fileset.rootdir>
     <fileset.rootfiles>
       <file>${PROJECT_ROOT}\+ni</file>
-      <file>${PROJECT_ROOT}\grpc_json_client.dll</file>
-      <file>${PROJECT_ROOT}\grpc_json_client.h</file>
-      <file>${PROJECT_ROOT}\sandbox.asv</file>
-      <file>${PROJECT_ROOT}\sandbox.m</file>
     </fileset.rootfiles>
     <fileset.depfun.included />
     <fileset.depfun.excluded />

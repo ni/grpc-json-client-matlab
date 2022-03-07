@@ -1,4 +1,4 @@
-function resetdescriptordatabaseimpl()
+function resetdescriptordatabaseimpl(session)
 library = libraryname();
 func = 'GrpcJsonClient_ResetDescriptorDatabase';
 unlocker = lock(session);
