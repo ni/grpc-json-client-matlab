@@ -1,8 +1,12 @@
 function loadgrpcjsonclientlibrary()
 library = libraryname();
-directory = nigrpcjsonclient.getInstallationLocation('gRPC JSON Client Core Library');
-header = fullfile(directory, 'grpc_json_client.h');
 if ~libisloaded(library)
-    loadlibrary(library, header);
+    directory = nigrpcjsonclient.getInstallationLocation('gRPC JSON Client Core Library');
+    if exist(directory, 'dir')
+        header = fullfile(directory, 'grpc_json_client.h');
+        loadlibrary(library, header);
+    else
+        loadlibrary(library);
+    end
 end
 end  % function LoadLibrary

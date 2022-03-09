@@ -1,6 +1,7 @@
-function session = locksessionimpl(session)
+function hasLock = locksessionimpl(session, timeout)
 library = libraryname();
 func = 'GrpcJsonClient_LockSession';
-errorCode = calllib(library, func, session);
+[errorCode, hasLock] = calllib(library, func, session, timeout, 0);
 checkerror(session, errorCode);
+hasLock = logical(hasLock);
 end  % function locksessionimpl
