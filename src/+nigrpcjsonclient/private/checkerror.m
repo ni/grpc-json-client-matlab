@@ -2,7 +2,7 @@ function checkerror(session, code)
 if code == 0
     return
 end
-if session.isNull()
+if ~session
     message = geterrorstringimpl(session, code);
 else
     [code, message] = geterrorimpl(session);
