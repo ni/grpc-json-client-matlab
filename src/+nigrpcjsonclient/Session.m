@@ -58,7 +58,8 @@ classdef Session < handle
 
         function response = blockingcall(obj, service, method, request, timeout)
             %BLOCKINGCALL Performs a blocking unary unary RPC call.
-            %   This function is equivalent to calling startasynccall followed by finishasynccall.
+            %   This function is equivalent to calling startasynccall followed by finishasynccall
+            %   but with a global timeout.
             %
             %   See also startasynccall, finishasynccall
             response = blockingcallimpl(obj.session, service, method, request, timeout);
@@ -81,6 +82,12 @@ classdef Session < handle
             %
             %   See also locksession
             unlocksessionimpl(obj.session);
+        end
+
+        function request = getdefaultrequest(obj, service, method, timeout)
+            %GETDEFAULTREQUEST Returns the default request string for the specified method.
+            %   Some gRPC fields (such as oneof) default to an empty value and are thus unpopulated.
+            request = getdefaultrequestimpl(obj.session, service, method, timeout);
         end
 
         function delete(obj)

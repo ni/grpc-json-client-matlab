@@ -7,6 +7,6 @@ unlocker = lock(session);
 checkerror(session, errorCode);
 response = blanks(size);
 [errorCode, ~, ~, ~, ~, response] = calllib(...
-    library, func, session, [], [], [], timeout, tag, response, size);
+    library, func, session, [], [], [], 0, tag, response, size);
 checkerror(session, errorCode);
 end  % function blockingcallimpl
