@@ -1,0 +1,16 @@
+function checkerror(obj, code)
+if code == 0
+    return
+end
+if obj.session
+    [code, message] = obj.geterror();
+else
+    message = geterrorstring(obj.session, code);
+end
+errId = ['nigrpcjsonclient:' char(errorcode(code))];
+if code < 0
+    error(errId, message);
+elseif code > 0
+    warning(errId, message);
+end
+end  % function checkerror
