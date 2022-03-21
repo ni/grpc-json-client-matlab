@@ -16,11 +16,11 @@ classdef Session < handle
     %   GETDEFAULTREQUEST - Returns the default request string for the specified method.
     
     properties (Access = private, Constant)
-        library = nigrpcjsonclient.Session.loadlibrary()
+        LIBRARY = nigrpcjsonclient.Session.loadlibrary()
     end
 
     properties (Access = private)
-        session
+        session  % the unique session handle for this object
     end
 
     methods (Access = public)

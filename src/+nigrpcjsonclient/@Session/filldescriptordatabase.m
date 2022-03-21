@@ -3,6 +3,6 @@ function filldescriptordatabase(obj, timeout)
 %reflection service.
 func = 'GrpcJsonClient_FillDescriptorDatabase';
 unlocker = obj.lock();
-errorCode = calllib(obj.library, func, obj.session, timeout);
+errorCode = calllib(obj.LIBRARY, func, obj.session, timeout);
 obj.checkerror(errorCode);
 end  % function filldescriptordatabase

@@ -7,10 +7,10 @@ function response = blockingcall(obj, service, method, request, timeout)
 func = 'GrpcJsonClient_BlockingCall';
 unlocker = obj.lock();
 [errorCode, ~, ~, ~, tag, ~, size] = calllib( ...
-    obj.library, func, obj.session, service, method, request, timeout, 0, [], 0);
+    obj.LIBRARY, func, obj.session, service, method, request, timeout, 0, [], 0);
 obj.checkerror(errorCode);
 response = blanks(size);
 [errorCode, ~, ~, ~, ~, response] = calllib( ...
-    obj.library, func, obj.session, [], [], [], 0, tag, response, size);
+    obj.LIBRARY, func, obj.session, [], [], [], 0, tag, response, size);
 obj.checkerror(errorCode);
 end  % function blockingcall

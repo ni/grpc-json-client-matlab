@@ -3,6 +3,6 @@ function resetdescriptordatabase(obj)
 %   Use this function to force the session to request new file descriptors for services.
 func = 'GrpcJsonClient_ResetDescriptorDatabase';
 unlocker = obj.lock();
-errorCode = calllib(obj.library, func, obj.session);
+errorCode = calllib(obj.LIBRARY, func, obj.session);
 obj.checkerror(errorCode);
 end  % function resetdescriptordatabase

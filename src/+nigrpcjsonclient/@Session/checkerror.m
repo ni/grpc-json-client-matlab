@@ -1,10 +1,11 @@
 function checkerror(obj, code)
-if code == 0
+if ~code  % return early if zero
     return
 end
 if obj.session
     [code, message] = obj.geterror();
 else
+    % geterrorstring supports null sessions
     message = geterrorstring(obj.session, code);
 end
 errId = ['nigrpcjsonclient:' char(errorcode(code))];

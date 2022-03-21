@@ -4,10 +4,10 @@ function request = getdefaultrequest(obj, service, method, timeout)
 func = 'GrpcJsonClient_GetDefaultRequest';
 unlocker = obj.lock();
 [errorCode, ~, ~, ~, size] = calllib( ...
-    obj.library, func, obj.session, service, method, timeout, [], 0);
+    obj.LIBRARY, func, obj.session, service, method, timeout, [], 0);
 obj.checkerror(errorCode);
 request = blanks(size);
 [errorCode, ~, ~, request] = calllib( ...
-    obj.library, func, obj.session, service, method, 0, request, size);
+    obj.LIBRARY, func, obj.session, service, method, 0, request, size);
 obj.checkerror(errorCode);
 end  % function getdefaultrequest

@@ -6,6 +6,8 @@ if ~libisloaded(name)
         path = fullfile(directory, name);
         loadlibrary(path, path);
     else
+        % this branch falls back to the default search order if the DLL isn't found in the expected
+        % installation directory
         loadlibrary(name);
     end
 end

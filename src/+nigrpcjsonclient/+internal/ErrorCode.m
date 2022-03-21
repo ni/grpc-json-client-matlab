@@ -1,4 +1,5 @@
 classdef ErrorCode < int32
+    %ERRORCODE Contains a mapping of error codes to error mnemonics. 
     enumeration
         BufferSizeOutOfRangeWarning (1)
         None (0)

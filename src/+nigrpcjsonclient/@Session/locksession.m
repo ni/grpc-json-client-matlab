@@ -7,7 +7,7 @@ function hasLock = locksession(obj, timeout)
 %
 %   See also unlocksession
 func = 'GrpcJsonClient_LockSession';
-[errorCode, hasLock] = calllib(obj.library, func, obj.session, timeout, 0);
+[errorCode, hasLock] = calllib(obj.LIBRARY, func, obj.session, timeout, 0);
 obj.checkerror(errorCode);
 hasLock = logical(hasLock);
 end  % function locksession
