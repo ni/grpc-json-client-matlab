@@ -84,6 +84,27 @@ it is typically a good idea to create a
 [cleanup object](https://www.mathworks.com/help/matlab/ref/oncleanup.html) then clear it when
 necessary.
 
+### Constructing Requests
+
+When constructing a JSON request string, an omitted field is set to the default value for that
+field's type. See the
+[Default Values](https://developers.google.com/protocol-buffers/docs/proto3#default) section of the
+Protocol Buffers Language Guide for information on the default value for each type.
+
+To automate creating requests, use the `getdefaultrequest` utility method:
+
+```MATLAB
+>> request = client.getdefaultrequest('helloworld.Greeter', 'SayHello', -1)
+
+request =
+
+    '{"name":""}'
+```
+
+Some fields (like Oneof) default to "not set" and therefore aren't emitted in the return value. See
+[JSON Mapping](https://developers.google.com/protocol-buffers/docs/proto3#json) for more
+information.
+
 ### Closing Sessions
 
 The `nigrpcjsonclient.Session` class subclasses the
