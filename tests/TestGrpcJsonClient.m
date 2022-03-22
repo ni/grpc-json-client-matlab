@@ -40,8 +40,7 @@ classdef TestGrpcJsonClient < matlab.unittest.TestCase
         end
 
         function lockAndUnlockSessionSucceeds(testCase)
-            hasLock = testCase.client.locksession(-1);
-            testCase.verifyTrue(hasLock);
+            testCase.client.locksession(-1);
             testCase.client.unlocksession();
         end
 

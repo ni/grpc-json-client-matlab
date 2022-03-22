@@ -11,7 +11,7 @@ classdef Session < handle
     %   STARTASYNCCALL - Starts an asynchronous call to a unary unary RPC.
     %   FINISHASYNCCALL - Finishes an asynchronous call started by startasynccall.
     %   BLOCKINGCALL - Performs a blocking unary unary RPC call.
-    %   LOCKSESSION - Locks the session for exclusive use by the calling thread.
+    %   LOCKSESSION - Locks the session for exclusive use by the caller.
     %   UNLOCKSESSION - Unlocks the session.
     %   GETDEFAULTREQUEST - Returns the default request string for the specified method.
     
@@ -36,8 +36,8 @@ classdef Session < handle
         tag = startasynccall(obj, service, method, request, timeout)
         response = finishasynccall(obj, tag, timeout)
         response = blockingcall(obj, service, method, request, timeout)
-        hasLock = locksession(obj, timeout)
-        unlocksession(obj)
+        hasLock = locksession(obj, timeout, hasLock)
+        hasLock = unlocksession(obj, hasLock)
         request = getdefaultrequest(obj, service, method, timeout)
         delete(obj)
     end

@@ -1,6 +1,6 @@
 function response = blockingcall(obj, service, method, request, timeout)
 %BLOCKINGCALL Performs a blocking unary unary RPC call.
-%   This function is equivalent to calling startasynccall followed by finishasynccall but with a
+%   This method is equivalent to calling startasynccall followed by finishasynccall but with a
 %   global timeout.
 %
 %   See also startasynccall, finishasynccall

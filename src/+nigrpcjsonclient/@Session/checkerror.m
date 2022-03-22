@@ -1,4 +1,5 @@
 function checkerror(obj, code)
+%CHECKERROR Delegates error handling to geterror or geterrorstring.
 if ~code  % return early if zero
     return
 end

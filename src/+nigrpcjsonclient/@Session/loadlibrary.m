@@ -1,4 +1,5 @@
 function name = loadlibrary()
+%LOADLIBRARY Loads the core library into memory.
 name = 'grpc_json_client';
 if ~libisloaded(name)
     directory = nigrpcjsonclient.getInstallationLocation('gRPC JSON Client Core Library');

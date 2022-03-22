@@ -1,9 +1,16 @@
-function unlocksession(obj)
+function hasLock = unlocksession(obj, hasLock)
 %UNLOCKSESSION Unlocks the session.
-%   Call this method the same number of times as locksession to prevent deadlock.
+%   The hasLock argument is optional (default true) and specifies whether the caller currently owns
+%   the lock. Omit the argument or pass true to release the lock. This method always returns false.
 %
 %   See also locksession
 func = 'GrpcJsonClient_UnlockSession';
-errorCode = calllib(obj.LIBRARY, func, obj.session);
+if exist('hasLock', 'var')
+    hasLockOption = logical(hasLock);
+else
+    hasLockOption = true;
+end
+[errorCode, hasLock] = calllib(obj.LIBRARY, func, obj.session, hasLockOption);
 obj.checkerror(errorCode);
+hasLock = logical(hasLock);
 end  % function unlocksession
