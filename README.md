@@ -74,7 +74,7 @@ call the `locksession` and `unlocksession` methods respectively.
 ```MATLAB
 >> hasLock = client.locksession(-1);
 >> % do some work...
->> client.unlocksession();
+>> client.unlocksession(hasLock);
 ```
 
 Note that exclusive access to a session does not imply exclusive access to a service.
