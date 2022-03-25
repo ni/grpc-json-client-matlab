@@ -43,7 +43,7 @@
       <item>https://github.com/ni/grpc-json-client/blob/main/LICENSE</item>
     </param.additional.sw.licenses>
     <param.additional.sw.win.url>
-      <item>https://github.com/ni/grpc-json-client/releases/download/v1.0.0-beta.4/ni-grpc-json-client-windows-x64.zip</item>
+      <item>https://github.com/ni/grpc-json-client/releases/latest/download/ni-grpc-json-client-windows-x64.zip</item>
     </param.additional.sw.win.url>
     <param.additional.sw.mac.url>
       <item />
