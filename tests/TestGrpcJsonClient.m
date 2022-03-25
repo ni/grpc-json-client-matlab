@@ -39,9 +39,16 @@ classdef TestGrpcJsonClient < matlab.unittest.TestCase
             testCase.verifyEqual(response, request);
         end
 
-        function lockAndUnlockSessionSucceeds(testCase)
+        function lockAndUnlockSessionWithoutHasLockSucceeds(testCase)
             testCase.client.locksession(-1);
             testCase.client.unlocksession();
+        end
+
+        function lockAndUnlockSessionWithHasLockSucceeds(testCase)
+            hasLock = testCase.client.locksession(-1);
+            testCase.verifyTrue(hasLock);
+            hasLock = testCase.client.unlocksession(hasLock);
+            testCase.verifyFalse(hasLock);
         end
 
         function getDefaultRequestSucceeds(testCase)
