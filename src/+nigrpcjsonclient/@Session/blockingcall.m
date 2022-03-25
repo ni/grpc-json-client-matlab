@@ -5,7 +5,6 @@ function response = blockingcall(obj, service, method, request, timeout)
 %
 %   See also startasynccall, finishasynccall
 func = 'GrpcJsonClient_BlockingCall';
-unlocker = obj.lock();
 [errorCode, ~, ~, ~, tag, ~, size] = calllib( ...
     obj.LIBRARY, func, obj.session, service, method, request, timeout, 0, [], 0);
 obj.checkerror(errorCode);

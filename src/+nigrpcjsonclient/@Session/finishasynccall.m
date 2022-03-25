@@ -3,7 +3,6 @@ function response = finishasynccall(obj, tag, timeout)
 %
 %   See also startasynccall
 func = 'GrpcJsonClient_FinishAsyncCall';
-unlocker = obj.lock();
 [errorCode, ~, size] = calllib(obj.LIBRARY, func, obj.session, tag, timeout, [], 0);
 obj.checkerror(errorCode);
 response = blanks(size);

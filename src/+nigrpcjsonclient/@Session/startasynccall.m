@@ -6,7 +6,6 @@ function tag = startasynccall(obj, service, method, request, timeout)
 %
 %   See also finishasynccall
 func = 'GrpcJsonClient_StartAsyncCall';
-unlocker = obj.lock();
 [errorCode, ~, ~, ~, tag] = calllib(...
     obj.LIBRARY, func, obj.session, service, method, request, timeout, 0);
 obj.checkerror(errorCode);

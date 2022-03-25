@@ -2,7 +2,6 @@ function request = getdefaultrequest(obj, service, method, timeout)
 %GETDEFAULTREQUEST Returns the default request string for the specified method.
 %   Some gRPC fields (such as oneof) default to an empty value and are thus unpopulated.
 func = 'GrpcJsonClient_GetDefaultRequest';
-unlocker = obj.lock();
 [errorCode, ~, ~, ~, size] = calllib( ...
     obj.LIBRARY, func, obj.session, service, method, timeout, [], 0);
 obj.checkerror(errorCode);

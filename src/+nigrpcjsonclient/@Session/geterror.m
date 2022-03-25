@@ -4,7 +4,6 @@ function [code, message] = geterror(obj)
 %
 %   See also geterrorstring
 func = 'GrpcJsonClient_GetError';
-unlocker = obj.lock();
 [errorCode, ~, ~, size] = calllib(obj.LIBRARY, func, obj.session, 0, [], 0);
 obj.checkerror(errorCode);
 message = blanks(size);
