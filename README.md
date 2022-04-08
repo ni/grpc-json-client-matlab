@@ -2,6 +2,10 @@
 
 MATLAB implementation of the [gRPC JSON Client](https://github.com/ni/grpc-json-client) API.
 
+## Getting Started
+
+For a general introduction to gRPC with JSON, visit the [Getting Started Guide](https://github.com/ni/grpc-json-client/wiki/Getting-Started-Guide).
+
 ## Installation
 
 Visit the [releases](https://github.com/ni/grpc-json-client-matlab/releases) page to download the
